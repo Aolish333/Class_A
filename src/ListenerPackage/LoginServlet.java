@@ -24,7 +24,8 @@ public class LoginServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");    //设置响应内容类型
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
 
         String username = request.getParameter("username");    //获取请求参数中的用户名
 

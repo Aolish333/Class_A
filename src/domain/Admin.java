@@ -4,9 +4,19 @@ package domain;
  * Created by hp on 2017/5/31.
  */
 public class Admin {
+
     String Manager_User;
     String Manager_Pwd;
     String Manager_ID;
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "Manager_User='" + Manager_User + '\'' +
+                ", Manager_Pwd='" + Manager_Pwd + '\'' +
+                ", Manager_ID='" + Manager_ID + '\'' +
+                '}';
+    }
     public String getManager_User() {
         return Manager_User;
     }

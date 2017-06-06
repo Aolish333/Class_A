@@ -11,6 +11,18 @@ public class Course {
     String Course_No;
     String Course_Name;
 
+    @Override
+    public String toString() {
+        return "Course{" +
+                "Course_Content='" + Course_Content + '\'' +
+                ", Course_Intro='" + Course_Intro + '\'' +
+                ", Course_Credit='" + Course_Credit + '\'' +
+                ", Course_Hours='" + Course_Hours + '\'' +
+                ", Course_No='" + Course_No + '\'' +
+                ", Course_Name='" + Course_Name + '\'' +
+                '}';
+    }
+
     public String getCourse_Content() {
         return Course_Content;
     }

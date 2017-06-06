@@ -27,7 +27,7 @@ public class LogoutServlet extends HttpServlet {
         request.getSession().invalidate();
 
         //从应用上下文中获取在线用户名列表
-        List<String> online = (List<String>) getServletContext().getAttribute("online");
+List<String> online = (List<String>) getServletContext().getAttribute("online");
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
         out.println("");

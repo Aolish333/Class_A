@@ -9,6 +9,17 @@ public class Teacher {
     String Teacher_User;
     String Teacher_No;
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "Teacher_Name='" + Teacher_Name + '\'' +
+                ", Teacher_Pwd='" + Teacher_Pwd + '\'' +
+                ", Teacher_User='" + Teacher_User + '\'' +
+                ", Teacher_No='" + Teacher_No + '\'' +
+                '}';
+    }
+
+
     public String getTeacher_Name() {
         return Teacher_Name;
     }
@@ -40,6 +51,4 @@ public class Teacher {
     public void setTeacher_No(String teacher_No) {
         Teacher_No = teacher_No;
     }
-
-
 }

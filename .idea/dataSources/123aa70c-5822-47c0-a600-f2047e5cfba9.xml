@@ -13,158 +13,212 @@
     <schema id="7" parent="1" name="performance_schema"/>
     <schema id="8" parent="1" name="sys"/>
     <schema id="9" parent="1" name="test"/>
-    <table id="10" parent="2" name="x_course"/>
-    <table id="11" parent="2" name="x_electives"/>
-    <table id="12" parent="2" name="x_manager"/>
-    <table id="13" parent="2" name="x_student"/>
-    <table id="14" parent="2" name="x_teacher"/>
-    <column id="15" parent="10" name="X_Course_Content">
+    <table id="10" parent="2" name="images"/>
+    <table id="11" parent="2" name="x_course"/>
+    <table id="12" parent="2" name="x_electives"/>
+    <table id="13" parent="2" name="x_manager"/>
+    <table id="14" parent="2" name="x_student"/>
+    <table id="15" parent="2" name="x_teacher"/>
+    <table id="16" parent="2" name="x_teaching"/>
+    <column id="17" parent="10" name="image_ID">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="18" parent="10" name="image_Path">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="19" parent="11" name="X_Course_Content">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="10" name="X_Course_Intro">
+    <column id="20" parent="11" name="X_Course_Intro">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="10" name="X_Course_Credit">
+    <column id="21" parent="11" name="X_Course_Credit">
       <Position>3</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="18" parent="10" name="X_Course_Hours">
+    <column id="22" parent="11" name="X_Course_Hours">
       <Position>4</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="19" parent="10" name="X_Course_No">
+    <column id="23" parent="11" name="X_Course_No">
       <Position>5</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="20" parent="10" name="X_Course_Name">
+    <column id="24" parent="11" name="X_Course_Name">
       <Position>6</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="21" parent="10" name="PRIMARY">
+    <key id="25" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>X_Course_No</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="22" parent="11" name="X_Electives_OnDuty">
+    <column id="26" parent="12" name="X_Electives_OnDuty">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="23" parent="11" name="X_Electives_TakeTask">
+    <column id="27" parent="12" name="X_Electives_TakeTask">
       <Position>2</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <column id="24" parent="11" name="X_Electives_TR">
+    <column id="28" parent="12" name="X_Electives_TR">
       <Position>3</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <column id="25" parent="11" name="X_Course_No">
+    <column id="29" parent="12" name="X_Course_No">
       <Position>4</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="11" name="X_Student_No">
+    <column id="30" parent="12" name="X_Student_No">
       <Position>5</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="27" parent="11" name="X_Student_No">
+    <column id="31" parent="12" name="X_Teacher_No">
+      <Position>6</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <index id="32" parent="12" name="X_Student_No">
       <ColNames>X_Student_No</ColNames>
     </index>
-    <key id="28" parent="11" name="PRIMARY">
+    <index id="33" parent="12" name="X_Teacher_No">
+      <ColNames>X_Teacher_No</ColNames>
+    </index>
+    <key id="34" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>X_Course_No
 X_Student_No</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="29" parent="11" name="x_electives_ibfk_1">
+    <foreign-key id="35" parent="12" name="x_electives_ibfk_1">
       <ColNames>X_Course_No</ColNames>
       <RefSchemaName>class_a</RefSchemaName>
       <RefTableName>x_course</RefTableName>
       <RefColNames>X_Course_No</RefColNames>
     </foreign-key>
-    <foreign-key id="30" parent="11" name="x_electives_ibfk_2">
+    <foreign-key id="36" parent="12" name="x_electives_ibfk_2">
       <ColNames>X_Student_No</ColNames>
       <RefSchemaName>class_a</RefSchemaName>
       <RefTableName>x_student</RefTableName>
       <RefColNames>X_Student_No</RefColNames>
     </foreign-key>
-    <column id="31" parent="12" name="X_Manager_User">
+    <foreign-key id="37" parent="12" name="x_electives_ibfk_3">
+      <ColNames>X_Teacher_No</ColNames>
+      <RefSchemaName>class_a</RefSchemaName>
+      <RefTableName>x_teacher</RefTableName>
+      <RefColNames>X_Teacher_No</RefColNames>
+    </foreign-key>
+    <column id="38" parent="13" name="X_Manager_User">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="12" name="X_Manager_Pwd">
+    <column id="39" parent="13" name="X_Manager_Pwd">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="12" name="X_Manager_ID">
+    <column id="40" parent="13" name="X_Manager_ID">
       <Position>3</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <key id="34" parent="12" name="PRIMARY">
+    <key id="41" parent="13" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>X_Manager_ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="13" name="X_Student_Name">
+    <column id="42" parent="14" name="X_Student_Name">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="36" parent="13" name="X_Student_User">
+    <column id="43" parent="14" name="X_Student_User">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="37" parent="13" name="X_Student_Pwd">
+    <column id="44" parent="14" name="X_Student_Pwd">
       <Position>3</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="38" parent="13" name="X_Student_No">
+    <column id="45" parent="14" name="X_Student_No">
       <Position>4</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <key id="39" parent="13" name="PRIMARY">
+    <key id="46" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>X_Student_No</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="40" parent="14" name="X_Teacher_Name">
+    <column id="47" parent="15" name="X_Teacher_Name">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
     </column>
-    <column id="41" parent="14" name="X_Teacher_Pwd">
+    <column id="48" parent="15" name="X_Teacher_Pwd">
       <Position>2</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="14" name="X_Teacher_User">
+    <column id="49" parent="15" name="X_Teacher_User">
       <Position>3</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="14" name="X_Teacher_No">
+    <column id="50" parent="15" name="X_Teacher_No">
       <Position>4</Position>
       <DataType>int(10)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <key id="44" parent="14" name="PRIMARY">
+    <key id="51" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>X_Teacher_No</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="52" parent="16" name="X_Teacher_No">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="16" name="X_Course_No">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="16" name="X_Teacher_No">
+      <ColNames>X_Teacher_No</ColNames>
+    </index>
+    <key id="55" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>X_Course_No
+X_Teacher_No</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="16" name="x_teaching_ibfk_2">
+      <ColNames>X_Teacher_No</ColNames>
+      <RefSchemaName>class_a</RefSchemaName>
+      <RefTableName>x_teacher</RefTableName>
+      <RefColNames>X_Teacher_No</RefColNames>
+    </foreign-key>
+    <foreign-key id="57" parent="16" name="x_teaching_ibfk_1">
+      <ColNames>X_Course_No</ColNames>
+      <RefSchemaName>class_a</RefSchemaName>
+      <RefTableName>x_course</RefTableName>
+      <RefColNames>X_Course_No</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

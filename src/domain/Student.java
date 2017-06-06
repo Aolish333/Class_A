@@ -9,6 +9,15 @@ public class Student {
     String Student_Psd;
     String Student_No;
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "Student_Name='" + Student_Name + '\'' +
+                ", Student_User='" + Student_User + '\'' +
+                ", Student_Psd='" + Student_Psd + '\'' +
+                ", Student_No='" + Student_No + '\'' +
+                '}';
+    }
     public String getStudent_Name() {
         return Student_Name;
     }
