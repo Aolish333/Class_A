@@ -14,6 +14,28 @@ import java.util.List;
  * Created by hp on 2017/5/31.
  */
 public class TeacherPakage {
+    /**
+     * 老师登陆
+     */
+    public ResultSet DoLogin(Teacher teacher) {
+        String sql_select = "SELECT X_Teacher_User,X_Teacher_Pwd FROM x_teacher WHERE X_Teacher_User = ? AND X_Teacher_Pwd = ? ";
+        Conn conn = new Conn();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection connection = null;
+        try {
+            connection = conn.getConn();
+            ps = connection.prepareCall(sql_select);
+            ps.setString(1,teacher.getTeacher_User());
+            ps.setString(2, teacher.getTeacher_Pwd());
+            rs = ps.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            CloseAll(connection, rs, ps);
+        }
+        return rs;
+    }
 
     /**
      * 获取某位老师所带的所有课程

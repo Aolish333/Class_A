@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-<form action="#" method="post" class="login_in">
+<form action="web" method="post" class="login_in">
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h1>用户登陆</h1>
     <table>
