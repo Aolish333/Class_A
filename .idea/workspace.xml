@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acfd194f-6875-4e69-a075-09acb082367a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/web/lib/commons-fileupload-1.3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/web/lib/commons-io-2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/.idea/libraries/commons_fileupload_1_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/org/junit/annotations.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/dao/AdminPackage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/dao/AdminPackageTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/utils/DownloadUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/web/AllLoginServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/web/UpLoadServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/web/downloadServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/web/client/dowload.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/web/client/list.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/web/client/message.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/web/client/upload.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Class_A/src/web/LoginServlet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Class_A/web/client/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Class_A/web/client/test3.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/artifacts/Class_A_war_exploded.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/artifacts/Class_A_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/dataSources/123aa70c-5822-47c0-a600-f2047e5cfba9.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/dataSources/123aa70c-5822-47c0-a600-f2047e5cfba9.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/libraries/Arquillian_JUnit_Release.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/libraries/Arquillian_JUnit_Release.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/Class_A.iml" afterPath="$PROJECT_DIR$/../Class_A/Class_A.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/ListenerPackage/LoginServlet.java" afterPath="$PROJECT_DIR$/../Class_A/src/ListenerPackage/LoginServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/dao/StudentPakage.java" afterPath="$PROJECT_DIR$/../Class_A/src/dao/StudentPakage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakage.java" afterPath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakageTest.java" afterPath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/web/ObtainClassByStudent.java" afterPath="$PROJECT_DIR$/../Class_A/src/web/ObtainClassByStudent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/web/ObtainClassByTeacher.java" afterPath="$PROJECT_DIR$/../Class_A/src/web/ObtainClassByTeacher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/client/course__student.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/client/course__student.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/client/course__teacher.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/client/course__teacher.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/client/test2.html" afterPath="$PROJECT_DIR$/../Class_A/web/client/test2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/index.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/index.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Class_A/web/client/test4.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/client/a.jsp" />
-    </list>
+    <list default="true" id="acfd194f-6875-4e69-a075-09acb082367a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/../Class_A/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,7 +69,7 @@
       <file leaf-file-name="a.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../Class_A/web/client/a.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="1611">
               <caret line="69" column="12" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
               <folding />
             </state>
@@ -1100,7 +1065,7 @@
       <workItem from="1496826477202" duration="2482000" />
       <workItem from="1496829596074" duration="3642000" />
       <workItem from="1496917548737" duration="2095000" />
-      <workItem from="1496923983214" duration="14290000" />
+      <workItem from="1496923983214" duration="14354000" />
     </task>
     <task id="LOCAL-00001" summary="李——第一次提交。">
       <created>1496748290390</created>
@@ -1116,7 +1081,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496825708736</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="基本完成">
+      <created>1496938316446</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1496938316447</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1152,7 +1124,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116133000" />
+    <option name="totallyTimeSpent" value="116197000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1187,7 +1159,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3272933" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.49570817" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33182332" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29667383" sideWeight="0.47058824" order="0" side_tool="false" content_ui="combo" />
@@ -1248,7 +1220,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="李——第一次提交。" />
     <MESSAGE value="第二次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第二次提交" />
+    <MESSAGE value="基本完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1638,7 +1611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Class_A/web/client/a.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="1611">
           <caret line="69" column="12" lean-forward="true" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
           <folding />
         </state>
