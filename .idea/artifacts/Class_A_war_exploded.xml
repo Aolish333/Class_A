@@ -13,6 +13,7 @@
           <element id="library" level="project" name="mysql-connector-java-5.1.38" />
           <element id="library" level="project" name="smartupload" />
           <element id="library" level="project" name="catalina" />
+          <element id="library" level="project" name="commons-fileupload-1.3.2" />
         </element>
       </element>
     </root>

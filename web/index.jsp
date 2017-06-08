@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-<form action="web" method="post" class="login_in">
+<form action="/web/AllLoginServlet" method="post" class="login_in">
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h1>用户登陆</h1>
     <table>
@@ -37,9 +37,12 @@
         </tr>
         <tr>
             <td>类型：</td>
-            <td><input type="radio" name="user_type" value="student">学生
-                <input type="radio" name="user_type" value="teacher">老师
-                <input type="radio" name="user_type" value="admin">管理员
+            <td>
+                <select name="user_type">
+                    <option value="student">学生</option>
+                    <option value="teacher">老师</option>
+                    <option value="admin">管理员</option>
+                </select>
             </td>
         </tr>
         <tr>

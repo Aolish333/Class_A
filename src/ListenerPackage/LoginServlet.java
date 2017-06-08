@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 /**
- * Created by hp on 2017/6/1.
+ * Created by hp on 2017/6/7.
  */
 @WebServlet(name = "LoginServlet",urlPatterns = "/ListenerPackage/LoginServlet")
 public class LoginServlet extends HttpServlet {

@@ -11,6 +11,10 @@
     <title>老师教师界面</title>
 </head>
 <body>
-
+<jsp:include page="header.jsp"/>
+<center>
+    <h2>管理学生</h2>
+</center>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

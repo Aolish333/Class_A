@@ -70,11 +70,11 @@
     </column>
     <column id="27" parent="12" name="X_Electives_TakeTask">
       <Position>2</Position>
-      <DataType>mediumtext|0</DataType>
+      <DataType>varchar(100)|0</DataType>
     </column>
     <column id="28" parent="12" name="X_Electives_TR">
       <Position>3</Position>
-      <DataType>mediumtext|0</DataType>
+      <DataType>varchar(100)|0</DataType>
     </column>
     <column id="29" parent="12" name="X_Course_No">
       <Position>4</Position>

@@ -1,6 +1,7 @@
 package dao;
 
 import domain.Course;
+import domain.Student;
 import domain.Teacher;
 
 import java.sql.Connection;
@@ -50,7 +51,7 @@ public class TeacherPakage {
         ResultSet rs = null;
         List<Course> list = new ArrayList<>();
         Course course = null;
-        String sql = "SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro,X_Teacher.X_Teacher_No FROM X_Course,X_Electives,X_Teacher WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND X_Teacher.X_Teacher_No = 1;";
+        String sql = "SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro FROM X_Course,X_Electives,X_Teacher WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND X_Teacher.X_Teacher_No = 1;";
         try {
             ps = connection.prepareStatement(sql);
 //            ps.setString(teacher.setTeacher_No());
@@ -69,6 +70,53 @@ public class TeacherPakage {
             e.printStackTrace();
         }finally {
             CloseAll(connection, rs, ps);
+        }
+        return list;
+    }
+
+    public List<Student> TmanageS(){
+        Conn conn=new Conn();
+        List<Student> list=new ArrayList<Student>();
+        ResultSet rs=null;
+        PreparedStatement ps=null;
+        String sql="select X_Student.X_Student_No,X_Student_Name from X_Student\n" +
+                "  left join X_Electives\n" +
+                "    on X_Student.X_Student_No = X_Electives.X_Student_No\n" +
+                "where X_Student.X_Student_No not IN (SELECT X_Student.X_Student_No FROM X_Student,X_Electives WHERE X_Student.X_Student_No = X_Electives.X_Student_No);";
+        try {
+            Connection connection=conn.getConn();
+            ps=connection.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Student student=new Student();
+                student.setStudent_No(rs.getString(1));
+                student.setStudent_Name(rs.getString(2));
+                list.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<Student> TS(){
+        List<Student> list=new ArrayList<Student>();
+        ResultSet rs=null;
+        PreparedStatement ps=null;
+        try {
+            Conn conn=new Conn();
+            Connection connection=conn.getConn();
+            String sql="SELECT X_Student.X_Student_No,X_Student_Name FROM X_Student,X_Electives WHERE X_Student.X_Student_No = X_Electives.X_Student_No";
+            ps=connection.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Student student=new Student();
+                student.setStudent_No(rs.getString(1));
+                student.setStudent_Name(rs.getString(2));
+                list.add(student);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return list;
     }

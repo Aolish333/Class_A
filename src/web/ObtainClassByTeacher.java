@@ -25,9 +25,9 @@ public class ObtainClassByTeacher extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         //得到该老师的工号
-        String TeacherNo = req.getParameter("Teacher_No");
+        String Teacher_No = req.getParameter("Teacher_No");
         Teacher teacher = new Teacher();
-        teacher.setTeacher_No(TeacherNo);
+        teacher.setTeacher_No(Teacher_No);
         //对数据表进行连接获取与该教师相关的课程
         TeacherPakage teacherPakage = new TeacherPakage();
         List<Course> courses = teacherPakage.ObtainAllCourse(teacher);

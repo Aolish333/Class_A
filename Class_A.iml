@@ -34,5 +34,6 @@
     <orderEntry type="library" name="mysql-connector-java-5.1.38" level="project" />
     <orderEntry type="library" name="smartupload" level="project" />
     <orderEntry type="library" name="catalina" level="project" />
+    <orderEntry type="library" name="commons-fileupload-1.3.2" level="project" />
   </component>
 </module>
