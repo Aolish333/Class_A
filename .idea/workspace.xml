@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acfd194f-6875-4e69-a075-09acb082367a" name="Default" comment="基本完成">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Class_A/src/web/AddStudentServlet.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Class_A/web/client/list.jsp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/libraries/Arquillian_JUnit_Release.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/libraries/Arquillian_JUnit_Release.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakage.java" afterPath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakageTest.java" afterPath="$PROJECT_DIR$/../Class_A/src/dao/TeacherPakageTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/src/web/ObtainClassByTeacher.java" afterPath="$PROJECT_DIR$/../Class_A/src/web/ObtainClassByTeacher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/client/add_student_to_course.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/client/add_student_to_course.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/client/course__teacher.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/client/course__teacher.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/web/client/test2.html" afterPath="$PROJECT_DIR$/../Class_A/web/client/test2.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Class_A/web/client/a.jsp" afterPath="$PROJECT_DIR$/../Class_A/web/client/showlist.jsp" />
-    </list>
+    <list default="true" id="acfd194f-6875-4e69-a075-09acb082367a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/../Class_A/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -999,7 +987,7 @@
       <workItem from="1496917548737" duration="2095000" />
       <workItem from="1496923983214" duration="14411000" />
       <workItem from="1496974433581" duration="6940000" />
-      <workItem from="1497005104003" duration="465000" />
+      <workItem from="1497005104003" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="李——第一次提交。">
       <created>1496748290390</created>
@@ -1036,7 +1024,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496938366717</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改一些布局还未完全完成。">
+      <created>1497005736533</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1497005736533</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1072,7 +1067,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123659000" />
+    <option name="totallyTimeSpent" value="123825000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1168,7 +1163,8 @@
     <MESSAGE value="李——第一次提交。" />
     <MESSAGE value="第二次提交" />
     <MESSAGE value="基本完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本完成" />
+    <MESSAGE value="修改一些布局还未完全完成。" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改一些布局还未完全完成。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1324,6 +1320,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1268">
           <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+          <folding>
+            <marker date="1496935691013" expanded="true" signature="378:475" ph="SELECT X_Stu... x_student" />
+            <marker date="1496935691013" expanded="true" signature="1347:1610" ph="SELECT DISTI... X_Course" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1399,6 +1399,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1406,6 +1407,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1413,6 +1415,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,6 +1423,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="e#3459#3468#0" expanded="true" />
+            <element signature="e#4479#4488#0" expanded="true" />
+            <marker date="1496980708776" expanded="true" signature="482:570" ph="INSERT INTO X_Electives... " />
+            <marker date="1496980708776" expanded="true" signature="1295:1392" ph="SELECT X_Tea... x_teacher" />
+            <marker date="1496980708776" expanded="true" signature="2331:2568" ph="SELECT DISTI... X_Course" />
+            <marker date="1496980708776" expanded="true" signature="3554:3911" ph="select X_Stu... X_Student" />
+            <marker date="1496980708776" expanded="true" signature="3798:3910" ph="SELECT X_Stu... X_Student" />
+            <marker date="1496980708776" expanded="true" signature="4676:4803" ph="SELECT X_Stu... X_Student" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1427,6 +1440,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,6 +1460,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1468,6 +1483,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-72">
           <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,6 +1512,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1503,6 +1520,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
