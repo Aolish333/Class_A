@@ -12,8 +12,12 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-<center>
-    <h2>管理学生</h2>
+<%
+    session .setAttribute("course",request.getParameter("course")
+    );
+%>
+    <center>
+    <h2><a href="showlist.jsp">管理学生</a></h2>
 </center>
 <jsp:include page="footer.jsp"/>
 </body>

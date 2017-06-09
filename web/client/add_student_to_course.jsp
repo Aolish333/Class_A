@@ -11,6 +11,6 @@
     <title>将学生加入课堂</title>
 </head>
 <body>
-
+<jsp:include page="showlist.jsp"/>
 </body>
 </html>

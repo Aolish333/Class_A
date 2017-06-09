@@ -46,7 +46,8 @@ public class ObtainClassByTeacher extends HttpServlet {
                     "        <td>"+course.getCourse_No()+"</td>\n" +
                     "        <td>"+course.getCourse_Name()+"</td>\n" +
                     "        <td>"+course.getCourse_Content()+"</td>\n" +
-                    "        <td>"+"<a href=\"../client/course__teacher.jsp\">进入课堂</a>"+"</td>\n" +
+                    "         <td>"+"<a href=\"../client/course__teacher.jsp?course="
+                    +course.getCourse_No()+"\">进入课堂</a>"+"</td>\n" +
                     "    </tr>");
         }
         out.println("    </tr>\n" +

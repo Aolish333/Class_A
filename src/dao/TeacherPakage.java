@@ -1,6 +1,7 @@
 package dao;
 
 import domain.Course;
+import domain.Electives;
 import domain.Student;
 import domain.Teacher;
 
@@ -15,6 +16,30 @@ import java.util.List;
  * Created by hp on 2017/5/31.
  */
 public class TeacherPakage {
+    /**
+     * 添加学生到该老师的课堂
+     */
+    public int AttendClass(Electives electives){
+        int row = 0;
+        String sql_select = "INSERT INTO X_Electives (X_Electives.X_Student_No, X_Electives.X_Course_No) VALUES (?,?);";
+        Conn conn = new Conn();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection connection = null;
+        try {
+            connection = conn.getConn();
+            ps = connection.prepareCall(sql_select);
+            ps.setString(1,electives.getStudent_No());
+            ps.setString(2, electives.getCourse_No());
+//            ps.setString(3,electives.getTeacher_No());
+            row  = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            CloseAll(connection, rs, ps);
+        }
+        return row;
+    }
     /**
      * 老师登陆
      */

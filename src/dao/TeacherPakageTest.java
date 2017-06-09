@@ -1,5 +1,6 @@
 package dao;
 
+import domain.Electives;
 import domain.Teacher;
 import org.junit.Test;
 
@@ -14,6 +15,15 @@ public class TeacherPakageTest {
         teacher.setTeacher_No("1");
         TeacherPakage teacherPakage = new TeacherPakage();
         teacherPakage.ObtainAllCourse(teacher);
+    }
+    @Test
+    public void addstudent(){
+        Electives electives = new Electives();
+        electives.setStudent_No("3");
+        electives.setCourse_No("2");
+        TeacherPakage teacherPakage = new TeacherPakage();
+        int row = teacherPakage.AttendClass(electives);
+        System.out.print(row);
     }
 
 

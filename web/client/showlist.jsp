@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>添加学生到课堂</title>
     <style>
         .text{
             float: left;
@@ -46,7 +46,7 @@
         <tr>
         <td><%=student.getStudent_No()%></td>
         <td><%=student.getStudent_Name()%></td>
-        <td><a href='add_student_to_course.jsp'>添加学生</a></td>
+        <td><a href="../web/AddStudentServlet?Student_No=<%=student.getStudent_No()%>">添加学生</a></td>
         </tr>
         <%
         }
