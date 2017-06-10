@@ -8,52 +8,51 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>首页</title>
-    <style>
-        .login_in {;
-            background-color: moccasin;
-            width: 300px; /*元素的宽度*/
-            height: 260px; /*元素的高度*/
-            position: absolute;
-            left: 50%; /*配合margin-left的负值实现水平居中*/
-            margin-left: -100px; /*值的大小等于元素宽度的一半*/
-            top: 50%; /*配合margin-top的负值实现垂直居中*/
-            margin-top: -100px; /*值的大小等于元素高度的一半*/
-        }
-    </style>
+    <title>登陆首页</title>
+    <link href="/css/CSS.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<form action="/web/AllLoginServlet" method="post" class="login_in">
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h1>用户登陆</h1>
-    <table>
-        <tr>
-            <td>用户名：</td>
-            <td><input style="text" name="user"></td>
-        </tr>
-        <tr>
-            <td>密码：</td>
-            <td><input style="password" name="user_psw"></td>
-        </tr>
-        <tr>
-            <td>类型：</td>
-            <td>
-                <select name="user_type">
-                    <option value="student">学生</option>
-                    <option value="teacher">老师</option>
-                    <option value="admin">管理员</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="提交"></td>
-            <td><input type="reset" value="重置"</td>
-        </tr>
-        <tr>
-            <td><a href="#">忘记密码？</a><br></td>
-            <td><a href="#">老师学生注册</a></td>
-        </tr>
-    </table>
-</form>
+<div class="site-login-wrapper">
+    <div class="header">
+        <h2>Login to
+            <img src="image/font.png" alt="logo">
+        </h2>
+    </div>
+    <div class="login-form">
+        <form action="/web/AllLoginServlet" method="post">
+            <ul class="form-content">
+                <li class="login-items">
+                    <span class="iconfont icon-yonghuming pics"></span><!--(矢量图库)-->
+                    <input class="login-user" name="user" type="text" placeholder="IconDeposit">
+                </li>
+                <li class="login-items">
+                    <span class="iconfont icon-mima pics"></span>
+                    <input class="login-pwd" name="user_psw" type="password" placeholder="••••••••••••••">
+                </li>
+                <li class="login-items">
+                    <span class="iconfont icon-mima pics"></span>
+                    <select name="user_type" class="login-user">
+                        <option value="student">学生</option>
+                        <option value="teacher">老师</option>
+                        <option value="admin">管理员</option>
+                    </select>
+                </li>
+                <li class="login-items rmb">
+                    <input id="checkbox" type="checkbox" checked>
+                    <label class="square" for="checkbox"></label>
+                    <label class="remember" for="checkbox">记住密码</label>
+                </li>
+                <li class="login-items rmb">
+                    <a class="forget" href="">Forgot username or password?</a>
+                </li>
+                <li class="login-items">
+                    <button type="submit" class="login-btn">Login</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="footer">
+    </div>
+</div>
 </body>
 </html>

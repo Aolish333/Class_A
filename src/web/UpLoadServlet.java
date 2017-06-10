@@ -1,5 +1,7 @@
 package web;
 
+import dao.StudentPakage;
+import domain.Electives;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -9,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,6 +34,8 @@ public class UpLoadServlet extends HttpServlet {
      * 上传数据及保存文件
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=UTF-8");
         // 检测是否为多媒体上传
         if (!ServletFileUpload.isMultipartContent(request)) {
             // 如果不是则停止
@@ -68,7 +73,20 @@ public class UpLoadServlet extends HttpServlet {
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
+        String flag = request.getParameter("id");
 
+        //获取学生的id
+        HttpSession session = request.getSession();
+        String  Student_No = (String) session.getAttribute("student_start");
+        String Electives_No = (String) session.getAttribute("Course_No");
+        Electives electives = new Electives();
+        electives.setStudent_No(Student_No);
+        electives.setCourse_No(Electives_No);
+//        PrintWriter out = response.getWriter();
+//        out.println(electives.getCourse_No());
+
+        String filePath = null;
+        String fileName = null;
         try {
             // 解析请求的内容提取文件数据
             @SuppressWarnings("unchecked")
@@ -79,11 +97,11 @@ public class UpLoadServlet extends HttpServlet {
                 for (FileItem item : formItems) {
                     // 处理不在表单中的字段
                     if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
+                        fileName = new File(item.getName()).getName();
+                        filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
                         // 在控制台输出文件的上传路径
-                        System.out.println(filePath);
+                        System.out.println(fileName);
                         // 保存文件到硬盘
                         item.write(storeFile);
                         request.setAttribute("message",
@@ -96,9 +114,19 @@ public class UpLoadServlet extends HttpServlet {
             request.setAttribute("message",
                     "错误信息: " + ex.getMessage());
         }
+
+
+        //将文件地址写入到数据库中
+        StudentPakage studentPakage = new StudentPakage();
+        if (flag.equals("1")){
+            electives.setElectives_TR(fileName);
+            studentPakage.UpLoadTR(electives);
+        }else {
+            electives.setElectives_TakeTask(fileName);
+            studentPakage.UpLoadTakeTask(electives);
+        }
         // 跳转到 message.jsp
-        request.getServletContext().getRequestDispatcher("/client/message.jsp").forward(
-                request, response);
+        request.getServletContext().getRequestDispatcher("/client/message.jsp").forward(request, response);
 
     }
 

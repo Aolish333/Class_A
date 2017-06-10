@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by hp on 2017/6/1.
  */
-    @WebServlet(name = "LogoutServlet",urlPatterns = "/ListenerPackage/LogoutServlet")
+    @WebServlet(name = "LogoutServlet",urlPatterns="/ListenerPackage/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

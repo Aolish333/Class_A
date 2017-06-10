@@ -12,11 +12,19 @@
 </head>
 <body>
 <center>
-<form method="post" action="/web/UpLoadServlet" enctype="multipart/form-data">
-    提交实验报告:
-    <input type="file" name="uploadFile" />
-    <input type="submit" value="上传" />
-</form>
+
+    <form method="post" action="/web/UpLoadServlet?id=1;" enctype="multipart/form-data">
+        提交实验报告:
+        <input type="file" name="uploadFile" />
+        <input type="submit" value="上传" />
+    </form>
+
+    <form method="post" action="/web/UpLoadServlet?id=2" enctype="multipart/form-data">
+        提交作业:
+        <input type="file" name="uploadFile" />
+        <input type="submit" value="上传" />
+    </form>
+
 </center>
 </body>
 </html>

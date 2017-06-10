@@ -1,4 +1,4 @@
-<%--
+<%@ page import="domain.Course" %><%--
   Created by IntelliJ IDEA.
   User: hp
   Date: 2017/5/31
@@ -11,6 +11,11 @@
     <title>学生教室界面</title>
 </head>
 <body>
+<%
+    session.setAttribute("Course_No", request.getParameter("Course_No"));
+%>
 <jsp:include page="upload.jsp"/>
+<jsp:include page="/ListenerPackage/LoginServlet"/>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

@@ -13,11 +13,13 @@
 <body>
 <jsp:include page="header.jsp"/>
 <%
-    session .setAttribute("course",request.getParameter("course")
-    );
+    session.setAttribute("course",request.getParameter("course"));
+//    out.print(session.getAttribute("course"));
 %>
     <center>
     <h2><a href="showlist.jsp">管理学生</a></h2>
+        <jsp:include page="/web/ShowTaskServlet"/>
+        <jsp:include page="/ListenerPackage/LoginServlet"/>
 </center>
 <jsp:include page="footer.jsp"/>
 </body>

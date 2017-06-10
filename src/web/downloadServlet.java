@@ -1,6 +1,5 @@
 package web;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -10,12 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 
 /**
  * Created by hp on 2017/6/8.
  */
-@WebServlet(name = "downloadServlet",urlPatterns = "/downloadServlet")
+@WebServlet(name = "downloadServlet",urlPatterns = "/web/downloadServlet")
 public class downloadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
@@ -26,14 +24,13 @@ public class downloadServlet extends HttpServlet {
 //        request.setCharacterEncoding("utf-8");
 //        response.setContentType("text/html;charset=UTF-8");
         //获取文件名
-        String filename=request.getParameter("name");
+        String filename = request.getParameter("name");
         //防止读取name名乱码
-        filename=new String(filename.getBytes("iso-8859-1"),"utf-8");
+        filename = new String(filename.getBytes("iso-8859-1"), "utf-8");
 //        filename = DownloadUtils.getFilename(request,filename);
         //在控制台打印文件名
-        System.out.println("文件名："+filename);
+        System.out.println("文件名：" + filename);
 
-        PrintWriter out = response.getWriter();
 
         //设置文件MIME类型
         response.setContentType(getServletContext().getMimeType(filename));
@@ -43,35 +40,25 @@ public class downloadServlet extends HttpServlet {
                 + new String(filename.getBytes("utf-8"), "iso-8859-1"));
 
         //获取要下载的文件绝对路径，我的文件都放到WebRoot/download目录下
-        ServletContext context=this.getServletContext();
-        String fullFileName=context.getRealPath("/upload/"+filename);
-        System.out.printf("fullFileName");
-
-        out.println(fullFileName);
+        String fullFileName = getServletContext().getRealPath("/upload/" + filename);
+        System.out.printf("fullFileName:" + fullFileName + "\n");
 
         //输入流为项目文件，输出流指向浏览器
-        InputStream is=new FileInputStream(fullFileName);
-        ServletOutputStream os = null;
-        try {
-            os =response.getOutputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
+        InputStream is = new FileInputStream(fullFileName);
+        ServletOutputStream os = response.getOutputStream();
+
 
     /*
      * 设置缓冲区
      * is.read(b)当文件读完时返回-1
      */
-            int len=-1;
-            byte[] b=new byte[1024];
-            while((len=is.read(b))!=-1){
-                os.write(b,0,len);
-            }
-            //关闭流
-            is.close();
-            os.close();
+        int len = -1;
+        byte[] b = new byte[1024];
+        while ((len = is.read(b)) != -1) {
+            os.write(b, 0, len);
         }
-        }
-
-
+        is.close();
+        os.close();
+    }
 }
+

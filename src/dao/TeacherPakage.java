@@ -17,6 +17,35 @@ import java.util.List;
  */
 public class TeacherPakage {
     /**
+     * 显示已经提交作业的同学的作业(实验报告和作业)
+     */
+    public List<Electives> ShowTask(Electives electives){
+        Conn conn = new Conn();
+        Connection connection = conn.getConn();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        List<Electives> list = new ArrayList<>();
+        Electives elect = null;
+        String sql = "SELECT DISTINCT X_Electives_TakeTask,X_Electives.X_Student_No ,X_Electives_TR FROM X_Electives,X_Teacher WHERE  x_electives.X_Course_No = ?;";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1,electives.getCourse_No());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                elect = new Electives();
+                elect.setElectives_TakeTask(rs.getString(1));
+                elect.setStudent_No(rs.getString(2));
+                elect.setElectives_TR(rs.getString(3));
+                list.add(elect);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            CloseAll(connection, rs, ps);
+        }
+        return list;
+    }
+    /**
      * 添加学生到该老师的课堂
      */
     public int AttendClass(Electives electives){
@@ -28,7 +57,7 @@ public class TeacherPakage {
         Connection connection = null;
         try {
             connection = conn.getConn();
-            ps = connection.prepareCall(sql_select);
+            ps = connection.prepareStatement(sql_select);
             ps.setString(1,electives.getStudent_No());
             ps.setString(2, electives.getCourse_No());
 //            ps.setString(3,electives.getTeacher_No());
@@ -44,15 +73,15 @@ public class TeacherPakage {
      * 老师登陆
      */
     public ResultSet DoLogin(Teacher teacher) {
-        String sql_select = "SELECT X_Teacher_User,X_Teacher_Pwd FROM x_teacher WHERE X_Teacher_User = ? AND X_Teacher_Pwd = ? ";
+        String sql_select = "SELECT * FROM x_teacher WHERE X_Teacher_No = ? AND X_Teacher_Pwd = ? ";
         Conn conn = new Conn();
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection connection = null;
         try {
             connection = conn.getConn();
-            ps = connection.prepareCall(sql_select);
-            ps.setString(1,teacher.getTeacher_User());
+            ps = connection.prepareStatement(sql_select);
+            ps.setString(1,teacher.getTeacher_No());
             ps.setString(2, teacher.getTeacher_Pwd());
             rs = ps.executeQuery();
         } catch (SQLException e) {
@@ -76,10 +105,10 @@ public class TeacherPakage {
         ResultSet rs = null;
         List<Course> list = new ArrayList<>();
         Course course = null;
-        String sql = "SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro FROM X_Course,X_Electives,X_Teacher WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND X_Teacher.X_Teacher_No = 1;";
+        String sql = "SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro FROM X_Course,X_Electives,X_Teacher WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND  X_Course.X_Course_No = X_Electives.X_Course_No AND X_Teacher.X_Teacher_No = ?;";
         try {
             ps = connection.prepareStatement(sql);
-//            ps.setString(teacher.setTeacher_No());
+            ps.setInt(1, Integer.parseInt(teacher.getTeacher_No()));
             rs = ps.executeQuery();
             while (rs.next()){
                 course = new Course();

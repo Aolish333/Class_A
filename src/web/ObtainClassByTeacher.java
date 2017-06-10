@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -25,7 +26,8 @@ public class ObtainClassByTeacher extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         //得到该老师的工号
-        String Teacher_No = req.getParameter("Teacher_No");
+        HttpSession session = req.getSession();
+        String  Teacher_No = (String) session.getAttribute("teacher_start");
         Teacher teacher = new Teacher();
         teacher.setTeacher_No(Teacher_No);
         //对数据表进行连接获取与该教师相关的课程

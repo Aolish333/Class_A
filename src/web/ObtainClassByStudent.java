@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -27,7 +28,10 @@ public class ObtainClassByStudent extends HttpServlet{
         req.setCharacterEncoding("utf-8");
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        String Student_No = req.getParameter("Student_No");
+        //传值
+        HttpSession session = req.getSession();
+        String  Student_No = (String) session.getAttribute("student_start");
+
         Student student = new Student();
         student.setStudent_No(Student_No);
         StudentPakage studentPakage = new StudentPakage();
@@ -47,7 +51,8 @@ public class ObtainClassByStudent extends HttpServlet{
                     "        <td>"+course.getCourse_No()+"</td>\n" +
                     "        <td>"+course.getCourse_Name()+"</td>\n" +
                     "        <td>"+course.getCourse_Content()+"</td>\n" +
-                    "        <td>"+"<a href=\"../client/course__student.jsp\">进入教室</a>"+"</td>\n" +
+                    "        <td>"+"<a href=\"../client/course__student.jsp?Course_No="
+                    +course.getCourse_No()+"\">进入教室</a>"+"</td>\n" +
                     "    </tr>");
         }
         out.println("    </tr>\n" +
