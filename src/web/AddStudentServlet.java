@@ -30,6 +30,8 @@ public class AddStudentServlet extends HttpServlet {
         electives.setStudent_No(Student_No);
         TeacherPakage teacherPakage = new TeacherPakage();
         int row =  teacherPakage.AttendClass(electives);
+        out.println(" <link href=\"/css/CSS.css\" rel=\"stylesheet\" type=\"text/css\" />");
+
         if (row == 1){
             out.println("添加成功...");
         }else {

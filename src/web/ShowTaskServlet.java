@@ -24,11 +24,13 @@ public class ShowTaskServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 //        获取seesion
         HttpSession session = request.getSession();
-        String  Course_No = (String) session.getAttribute("course");
+//        String  Course_No = (String) session.getAttribute("Course_No");
+        String Course_No = request.getParameter("Course_No");
         Electives electives = new Electives();
         electives.setCourse_No(Course_No);
         TeacherPakage teacherPakage = new TeacherPakage();
         List<Electives> list =  teacherPakage.ShowTask(electives);
+        out.println(" <link href=\"/css/CSS.css\" rel=\"stylesheet\" type=\"text/css\" />");
         out.println("<center>\n" +
                 "<table border=\"1px\">\n" +
                 "    <tr>\n" +

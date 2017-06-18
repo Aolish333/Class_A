@@ -1,6 +1,7 @@
 package dao;
 
 import domain.Electives;
+import domain.Student;
 import org.junit.Test;
 
 
@@ -17,5 +18,12 @@ public class StudentPakageTest {
         electives.setCourse_No("1");
         StudentPakage studentPakage = new StudentPakage();
         studentPakage.UpLoadTR(electives);
+    }
+    @Test
+    public void tfsdst()  {
+        Student electives = new Student();
+        electives.setStudent_No("3");
+        StudentPakage studentPakage = new StudentPakage();
+        studentPakage.DeleteUser(electives);
     }
 }

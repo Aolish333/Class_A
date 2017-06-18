@@ -1,0 +1,125 @@
+# 重新刷新使用
+DROP DATABASE class_a;
+
+CREATE DATABASE class_a;
+
+CREATE TABLE X_Student (
+  X_Student_Name VARCHAR(25),
+  X_Student_User VARCHAR(25) NULL,
+  X_Student_Pwd  VARCHAR(25) NULL,
+  X_Student_No   INT(10)     NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (X_Student_No)
+)
+  CHARSET = utf8;
+
+CREATE TABLE X_Teacher (
+  X_Teacher_Name VARCHAR(25),
+  X_Teacher_Pwd  VARCHAR(25) NOT NULL,
+  X_Teacher_User VARCHAR(25) NOT NULL,
+  X_Teacher_No   INT(10)     NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (X_Teacher_No)
+)
+  CHARSET = utf8;
+
+CREATE TABLE X_Manager (
+  X_Manager_User VARCHAR(25) NOT NULL,
+  X_Manager_Pwd  VARCHAR(25) NOT NULL,
+  X_Manager_ID   INT(10)     NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (X_Manager_ID)
+)
+  CHARSET = utf8;
+# 课程信息
+CREATE TABLE X_Course (
+  X_Course_Content VARCHAR(25) NOT NULL,
+  X_Course_Intro   VARCHAR(25) NOT NULL,
+  X_Course_Credit  VARCHAR(25) NOT NULL,
+  X_Course_Hours   VARCHAR(25) NOT NULL,
+  X_Course_No      INT(10)     NOT NULL AUTO_INCREMENT,
+  X_Course_Name    VARCHAR(25) NOT NULL,
+  PRIMARY KEY (X_Course_No)
+)
+  CHARSET = utf8;
+# 选修课程
+CREATE TABLE X_Electives (
+  X_Electives_OnDuty   VARCHAR(25),
+  X_Electives_TakeTask VARCHAR(100),
+  X_Electives_TR       VARCHAR(100),
+  X_Course_No          INT(10),
+  X_Student_No         INT(10),
+  X_Teacher_No         INT(10),
+  PRIMARY KEY (X_Course_No, X_Student_No),
+  FOREIGN KEY (X_Course_No) REFERENCES class_a.x_course (X_Course_No),
+  FOREIGN KEY (X_Student_No) REFERENCES class_a.x_student (X_Student_No),
+  FOREIGN KEY (X_Teacher_No) REFERENCES class_a.x_teacher (X_Teacher_No)
+)
+  CHARSET = utf8;
+
+CREATE TABLE X_Teaching (
+  X_Teacher_No INT(10),
+  X_Course_No  INT(10),
+  PRIMARY KEY (X_Course_No, X_Teacher_No),
+  FOREIGN KEY (X_Course_No) REFERENCES class_a.x_course (X_Course_No),
+  FOREIGN KEY (X_Teacher_No) REFERENCES class_a.x_teacher (X_Teacher_No)
+)CHARSET = utf8;
+
+
+INSERT INTO x_student (X_Student_Name, X_Student_User, X_Student_Pwd) VALUES ("李晓津", 123, 123);
+
+INSERT INTO x_student (X_Student_Name, X_Student_User, X_Student_Pwd) VALUES ("李dd", 345, 123);
+
+INSERT INTO X_Teacher (X_Teacher_Name, X_Teacher_Pwd, X_Teacher_User) VALUES ("李老师", 456, 456);
+
+INSERT INTO x_electives (class_a.x_electives.X_Course_No, .X_Electives.X_Student_No, .X_Electives.X_Teacher_No)
+VALUES (1, 1, 1);
+
+INSERT INTO X_Manager (X_Manager_User, X_Manager_Pwd) VALUES (666666, 666666);
+
+INSERT INTO X_Course (X_Course_Content, X_Course_Intro, X_Course_Credit, X_Course_Hours, X_Course_Name)
+VALUES ("ssddsa", "sadjfgkskdafj", "2", "10学时", "数据结构");
+
+
+SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro,X_Teacher.X_Teacher_No
+FROM X_Course,X_Electives,X_Teacher
+WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND X_Teacher.X_Teacher_No ="1" ;
+
+SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro,X_Teacher.X_Teacher_No FROM X_Course,X_Electives,X_Teacher WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND X_Teacher.X_Teacher_No = 1;
+
+
+SELECT X_Student.X_Student_No,X_Student_Name FROM X_Student,X_Electives WHERE X_Student.X_Student_No = X_Electives.X_Student_No;
+
+SELECT DISTINCT X_Student.X_Student_No,X_Student_Name
+FROM X_Student,X_Electives WHERE  NOT EXISTS (SELECT X_Student.X_Student_No FROM X_Student,X_Electives WHERE X_Student.X_Student_No = X_Electives.X_Student_No);
+
+select X_Student.X_Student_No,X_Student_Name from X_Student
+  left join X_Electives
+    on X_Student.X_Student_No = X_Electives.X_Student_No
+where X_Student.X_Student_No not IN (SELECT X_Student.X_Student_No FROM X_Student,X_Electives WHERE X_Student.X_Student_No = X_Electives.X_Student_No);
+
+SELECT x_manager.X_Manager_User,x_manager.X_Manager_Pwd FROM x_manager WHERE  X_Manager_User= "666666" AND X_Manager_Pwd ="666666";
+
+
+SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro ,x_student.X_Student_No  FROM X_Course,X_Electives ,x_student WHERE  x_student.X_Student_No = X_Electives.X_Student_No AND X_Student.X_Student_No = 1;
+# 添加学生到课堂
+INSERT INTO X_Electives (X_Electives.X_Student_No, X_Electives.X_Course_No) VALUES (2, 2);
+# 上传作业
+INSERT INTO X_Electives ( X_Electives_TakeTask, X_Course_No, X_Student_No) VALUES ();
+# 显示上传本课程作业的所有学生
+SELECT DISTINCT X_Electives_TakeTask,X_Electives.X_Student_No FROM X_Electives,X_Teacher WHERE X_Electives_TakeTask IS NOT NULL AND X_Electives.te
+
+# 学生获得选课情况
+SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro ,x_student.X_Student_No  FROM X_Course,X_Electives ,x_student WHERE  x_student.X_Student_No = X_Electives.X_Student_No AND X_Course.X_Course_No = X_Electives.X_Course_No AND X_Student.X_Student_No = 1;
+
+# 老师获得选课情况
+SELECT DISTINCT X_Course.X_Course_No,X_Course_Content,X_Course_Credit,X_Course_Hours,X_Course_Name,X_Course_Intro FROM X_Course,X_Electives,X_Teacher WHERE  X_Teacher.X_Teacher_No = X_Electives.X_Teacher_No AND  X_Course.X_Course_No = X_Electives.X_Course_No AND X_Teacher.X_Teacher_No = 1;
+
+# 上传文件
+INSERT INTO X_Electives ( X_Electives_TakeTask, X_Course_No, X_Student_No) VALUES ("H:\Class_A\out\artifacts\Class_A_war_exploded\.\upload\13_Y01__李晓津_杨冰玉_庞明鲜_师焕婷.pdf",2,2)
+
+UPDATE X_Electives
+SET X_Electives.X_Electives_TR = "H:\Class_A\out\artifacts\Class_A_war_exploded\.\upload\13_Y01__李晓津_杨冰玉_庞明鲜_师焕婷.pdf"
+WHERE X_Electives.X_Course_No = 1 AND X_Electives.X_Student_No = 1;
+
+UPDATE X_Electives SET X_Electives.X_Electives_TakeTask = "H:\Class_A\out\artifacts\Class_A_war_exploded\.\upload\13_Y01__李晓津_杨冰玉_庞明鲜_师焕婷.pdf"
+  WHERE X_Electives.X_Course_No = 1 AND X_Electives.X_Student_No = 1;
+
+UPDATE X_Electives SET X_Electives_TakeTask = ? WHERE X_Electives.X_Course_No = ? AND X_Electives.X_Student_No = ?;

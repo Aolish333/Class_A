@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>下载文件</title>
+    <link href="/css/CSS.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 <a href="/downloadServlet?name=13_Y01__李晓津_杨冰玉_庞明鲜_师焕婷.pdf" >下载文档1</a>

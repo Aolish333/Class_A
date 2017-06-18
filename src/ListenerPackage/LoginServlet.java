@@ -28,7 +28,9 @@ public class LoginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
+        String type = (String) session.getAttribute("type");
         String username = (String) session.getAttribute("student_start");
+
 //        String username = request.getParameter("username");    //获取请求参数中的用户名
 
         //往session中添加属性,会触发HttpSessionAttributeListener中的attributeAdded方法
@@ -43,7 +45,7 @@ public class LoginServlet extends HttpServlet {
         out.println("");
         out.println("  <title>用户列表</title>");
         out.println("  ");
-        out.println("当前用户是：" + username);
+        out.println("用户类型：" + type);
         out.print("    <hr><h3>在该教室的列表</h3>");
 
         int size = online == null ? 0 : online.size();

@@ -31,12 +31,15 @@ public class AllLoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         //根据不同的用户类型进行传session
         HttpSession session = request.getSession();
+        session.setAttribute("type",request.getParameter("user_type"));
 
         PrintWriter out = response.getWriter();
         ResultSet resultSet = null;
         String id = request.getParameter("user");
         String user_psw = request.getParameter("user_psw");
         String type = request.getParameter("user_type");
+
+        out.println(" <link href=\"/css/CSS.css\" rel=\"stylesheet\" type=\"text/css\" />");
 
 //        HttpSession session = req.setAttribute("user",username);
         //用session进行传值
@@ -66,7 +69,7 @@ public class AllLoginServlet extends HttpServlet {
                 session.setAttribute("teacher_start",teacher.getTeacher_No());
                 out.print("老师登陆" + teacher.getTeacher_No() + "成功...");
                 //学生登陆成功
-                response.setHeader("refresh", "3,URL=ObtainClassByTeacher");
+                response.setHeader("refresh", "2,URL=ObtainClassByTeacher");
             }
         } else if (type.equals("admin")){
             Admin admin = new Admin();
@@ -79,11 +82,11 @@ public class AllLoginServlet extends HttpServlet {
                 session.setAttribute("admin_start",admin.getManager_User());
                 out.print("管理员登陆" + admin.getManager_User() + "成功...");
                 //管理员登陆成功
-                response.setHeader("refresh", "3,URL=../client/manage_home.jsp");
+                response.setHeader("refresh", "2,URL=../manage/ShowTwo.jsp");
             }
         }else {
             out.print("密码错误，三秒后将重回主页");
-            response.setHeader("refresh", "3,URL=index.jsp");
+            response.setHeader("refresh", "2,URL=index.jsp");
         }
     }
 }

@@ -126,6 +126,7 @@ public class UpLoadServlet extends HttpServlet {
             studentPakage.UpLoadTakeTask(electives);
         }
         // 跳转到 message.jsp
+        response.setHeader("refresh", "3,URL=/client/course__student.jsp");
         request.getServletContext().getRequestDispatcher("/client/message.jsp").forward(request, response);
 
     }

@@ -15,6 +15,111 @@ import java.util.List;
  * Created by hp on 2017/5/31.
  */
 public class StudentPakage {
+    public int InsertUser(Student S){
+        int rs=0;
+        try {
+            Conn conn=new Conn();
+            Connection dbc=conn.getConn();
+            //问号占位
+            String sql_insert="insert into x_student(X_Student_Name,X_Student_Pwd,X_Student_User) value(?,?,?) ";
+            //Statement接口提供了查询语句和获取查询结果的基本方法
+            PreparedStatement pst=dbc.prepareStatement(sql_insert);
+            //给问号赋值1，2，3代表第几个问号
+            pst.setString(1,S.getStudent_Name());
+            pst.setString(2,S.getStudent_Psd());
+            pst.setString(3,S.getStudent_User());
+            rs=pst.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return rs;
+    }
+    //查询数据
+    public List<Student> SelectUser(){
+        List<Student> list=new ArrayList<Student>();
+        //ResultSet对象接收查询结果集
+        //ResultSet对象包含了符合SQL语句的所有行，针对java中的数据类型提供了一套get。。。方法，
+        //根据这个方法可以获得每一行的数据
+        ResultSet rs=null;
+        try{
+            Conn conn=new Conn();
+            Connection dbc=conn.getConn();
+            String sql_select="select * from x_student";
+            PreparedStatement pst=dbc.prepareStatement(sql_select);
+            rs=pst.executeQuery();
+            while(rs.next()){
+                Student stu=new Student();
+                stu.setStudent_No(rs.getString(4));
+                stu.setStudent_Name(rs.getString(1));
+                stu.setStudent_Psd(rs.getString(3));
+                stu.setStudent_User(rs.getString(2));
+                list.add(stu);
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public  List<Student> SelectUserId(Student usera){
+        List<Student> list=new ArrayList<Student>();
+        ResultSet rs=null;
+        try {
+            Conn conna=new Conn();
+            Connection dbc=conna.getConn();
+            String sql_select_id="select * from x_student where X_Student_No=?";
+            PreparedStatement pst=dbc.prepareStatement(sql_select_id);
+            pst.setString(1, usera.getStudent_No());
+            rs=pst.executeQuery();
+            if(rs.next()){
+                usera.setStudent_Name(rs.getString(1));
+                usera.setStudent_Psd(rs.getString(3));
+                usera.setStudent_User(rs.getString(2));
+                list.add(usera);
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return list ;
+    }
+    //2.接受用户修改后的值，修改当前记录
+    public int UpdateUserId(Student S){
+        int rs=0;
+        try {
+            Conn dbc=new Conn();
+            Connection conn=dbc.getConn();
+            String sql_update="update x_student set X_Student_Name=?,X_Student_Pwd=?,X_Student_User=? where X_Student_No=?";
+            PreparedStatement pst=conn.prepareStatement(sql_update);
+            pst.setString(1,S.getStudent_Name());
+            pst.setString(2,S.getStudent_Psd());
+            pst.setString(3,S.getStudent_User());
+            pst.setString(4,S.getStudent_No());
+            rs=pst.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return rs;
+    }
+    //删除数据
+    public int DeleteUser(Student S){
+        int rs=0;
+        try {
+            Conn conna=new Conn();
+            Connection dbc=conna.getConn();
+            String sql_delete="delete from x_student where X_Student_No=?";
+            PreparedStatement pst=dbc.prepareStatement(sql_delete);
+            //对sql语句中的第一个参数赋值
+            pst.setString(1, S.getStudent_No());
+            rs=pst.executeUpdate();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
     /**
      * 上传实验报告
      */

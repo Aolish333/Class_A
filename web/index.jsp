@@ -10,16 +10,28 @@
 <head>
     <title>登陆首页</title>
     <link href="/css/CSS.css" rel="stylesheet" type="text/css" />
+    <style>
+        .ThreeDee {
+            font-family: 'Microsoft YaHei';
+            line-height: 1em;
+            color: #fff9d6;
+            font-weight:bold;
+            font-size: 25px;
+            text-shadow:0px 0px 0 rgb(197,197,197),1px 1px 0 rgb(169,169,169),2px 2px 0 rgb(141,141,141),3px 3px 0 rgb(113,113,113), 4px 4px 0 rgb(85,85,85),5px 5px 4px rgba(0,0,0,0.4),5px 5px 1px rgba(0,0,0,0.5),0px 0px 4px rgba(0,0,0,.2);}
+    </style>
+
 </head>
 <body>
 <div class="site-login-wrapper">
     <div class="header">
-        <h2>Login to
-            <img src="image/font.png" alt="logo">
-        </h2>
+        <div class="ThreeDee">
+            <h2>Login to
+                <img src="image/font.png" alt="logo">
+            </h2>
+        </div>
     </div>
     <div class="login-form">
-        <form action="/web/AllLoginServlet" method="post">
+        <form action="/web/AllLoginServlet" method="get">
             <ul class="form-content">
                 <li class="login-items">
                     <span class="iconfont icon-yonghuming pics"></span><!--(矢量图库)-->
@@ -43,7 +55,7 @@
                     <label class="remember" for="checkbox">记住密码</label>
                 </li>
                 <li class="login-items rmb">
-                    <a class="forget" href="">Forgot username or password?</a>
+                    <a class="forget" href="/manage/InsterStuMe.jsp">Forgot username or password?</a>
                 </li>
                 <li class="login-items">
                     <button type="submit" class="login-btn">Login</button>

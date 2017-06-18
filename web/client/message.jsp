@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="/css/CSS.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <center>
