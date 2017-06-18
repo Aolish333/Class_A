@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acfd194f-6875-4e69-a075-09acb082367a" name="Default" comment="完成课程设计">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/libraries/Arquillian_JUnit_Release.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/libraries/Arquillian_JUnit_Release.xml" />
+    <list default="true" id="acfd194f-6875-4e69-a075-09acb082367a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Class_A/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Class_A/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/../Class_A/out/" />
@@ -1000,7 +999,7 @@
       <workItem from="1497531406286" duration="9286000" />
       <workItem from="1497571117591" duration="4325000" />
       <workItem from="1497579376586" duration="2586000" />
-      <workItem from="1497761954585" duration="242000" />
+      <workItem from="1497761954585" duration="505000" />
     </task>
     <task id="LOCAL-00001" summary="李——第一次提交。">
       <created>1496748290390</created>
@@ -1072,7 +1071,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497762043613</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成课程设计">
+      <created>1497762205685</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1497762205685</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1108,7 +1114,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198085000" />
+    <option name="totallyTimeSpent" value="198348000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
